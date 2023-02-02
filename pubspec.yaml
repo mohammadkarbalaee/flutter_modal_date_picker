@@ -1,6 +1,6 @@
 name: flutter_modal_date_picker
 description: A fancy and highly customizable date picker for Flutter
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/muhammadkarbalaee/flutter_modal_date_picker
 
 environment:
@@ -26,7 +26,10 @@ flutter:
 
   # To add assets to your package, add an assets section, like this:
   assets:
-    - assets/icons/
+    - assets/icons/arrow_left_1.svg
+    - assets/icons/ic_arrow_right.svg
+    - assets/icons/ic_calendar_circle_purple.svg
+    - assets/icons/ic_edit_circle.svg
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages
