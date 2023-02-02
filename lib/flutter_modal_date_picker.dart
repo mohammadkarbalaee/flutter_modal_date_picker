@@ -8,6 +8,8 @@ import 'package:flutter_modal_date_picker/ex_string.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'fullwidth_button/fullwidth_button.dart';
+
 Future<dynamic> CustomDatePickerDialog(
     BuildContext context, DateTime cd) async {
   Completer completer = new Completer();
@@ -582,7 +584,7 @@ Future<dynamic> CustomDatePickerDialog(
                                   Navigator.pop(context);
                                 },
                                 backgroundColor: purple,
-                                child: "ok",
+                                child: Text("ok",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.white,
