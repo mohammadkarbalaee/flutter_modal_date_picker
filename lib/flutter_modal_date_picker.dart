@@ -10,8 +10,7 @@ import 'package:intl/intl.dart' as intl;
 
 import 'fullwidth_button/fullwidth_button.dart';
 
-Future<dynamic> CustomDatePickerDialog(
-    BuildContext context, DateTime cd) async {
+Future<dynamic> showModalDatePicker(BuildContext context, DateTime cd) async {
   Completer completer = new Completer();
   ValueNotifier<String> displayMonth = ValueNotifier("");
   ValueNotifier<String> displayYear = ValueNotifier("");
@@ -70,8 +69,6 @@ Future<dynamic> CustomDatePickerDialog(
       context: context,
       isDismissible: true,
       isScrollControlled: true,
-      barrierColor: Colors.black.withAlpha(1),
-      backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
         // <-- SEE HERE
         borderRadius: BorderRadius.vertical(
@@ -104,8 +101,7 @@ Future<dynamic> CustomDatePickerDialog(
                           children: [
                             Container(
                               padding: EdgeInsets.all(15),
-                              width:
-                                  MediaQuery.of(context).size.width * 0.83,
+                              width: MediaQuery.of(context).size.width * 0.83,
                               decoration: BoxDecoration(
                                   color: textDark,
                                   borderRadius: BorderRadius.only(
@@ -175,11 +171,8 @@ Future<dynamic> CustomDatePickerDialog(
                                         isEditMode = false;
                                       });
                                     },
-                                    child: SvgPicture.asset(
-                                      "assets/icons/ic_calendar_circle_purple.svg",
-                                      width: 33,
-                                      height: 33,
-                                    ),
+                                    child: Icon(Icons.calendar_today,
+                                        color: Colors.white, size: 20),
                                   )
                                 ],
                               ),
@@ -192,8 +185,7 @@ Future<dynamic> CustomDatePickerDialog(
                                       bottomLeft: Radius.circular(15))),
                               padding: EdgeInsets.only(
                                   left: 15, right: 15, bottom: 10),
-                              width:
-                                  MediaQuery.of(context).size.width * 0.83,
+                              width: MediaQuery.of(context).size.width * 0.83,
                               child: ValueListenableBuilder(
                                   valueListenable: errorState,
                                   builder: (context, value, child) => Container(
@@ -212,8 +204,7 @@ Future<dynamic> CustomDatePickerDialog(
                                       child: TextFormField(
                                         textInputAction: TextInputAction.next,
                                         style: TextStyle(
-                                            color: textDark,
-                                            fontSize: 14),
+                                            color: textDark, fontSize: 14),
                                         textAlign: TextAlign.left,
                                         textAlignVertical:
                                             TextAlignVertical.center,
@@ -223,8 +214,8 @@ Future<dynamic> CustomDatePickerDialog(
                                           fillColor: Colors.transparent,
                                           border: InputBorder.none,
                                           contentPadding: EdgeInsets.all(20),
-                                          hintStyle: TextStyle(
-                                              color: grayLight),
+                                          hintStyle:
+                                              TextStyle(color: grayLight),
                                           floatingLabelBehavior:
                                               FloatingLabelBehavior.never,
                                         ),
@@ -242,15 +233,12 @@ Future<dynamic> CustomDatePickerDialog(
                               FullwdithButton(
                                   width: MediaQuery.of(context).size.width * .4,
                                   onPressed: () {},
-                                  backgroundColor:
-                                      Colors.white,
+                                  backgroundColor: Colors.white,
                                   outlineColor: purple,
-                                  child: Text(
-                                      "cancel",
+                                  child: Text("cancel",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          color: purple,
-                                          fontSize: 15),
+                                          color: purple, fontSize: 15),
                                       textDirection: TextDirection.ltr)),
                               FullwdithButton(
                                   width: MediaQuery.of(context).size.width * .4,
@@ -267,13 +255,11 @@ Future<dynamic> CustomDatePickerDialog(
                                     } else
                                       errorState.value = 1;
                                   },
-                                  backgroundColor:
-                                      purple,
+                                  backgroundColor: purple,
                                   child: Text("ok",
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 15),
+                                          color: Colors.white, fontSize: 15),
                                       textDirection: TextDirection.ltr))
                             ],
                           ),
@@ -302,8 +288,7 @@ Future<dynamic> CustomDatePickerDialog(
                         children: [
                           Container(
                             padding: EdgeInsets.all(15),
-                            width:
-                                MediaQuery.of(context).size.width * 0.83,
+                            width: MediaQuery.of(context).size.width * 0.83,
                             decoration: BoxDecoration(
                                 color: textDark,
                                 borderRadius: BorderRadius.only(
@@ -358,11 +343,8 @@ Future<dynamic> CustomDatePickerDialog(
                                       isEditMode = true;
                                     });
                                   },
-                                  child: SvgPicture.asset(
-                                    "assets/icons/ic_edit_circle.svg",
-                                    width: 33,
-                                    height: 33,
-                                  ),
+                                  child: Icon(Icons.edit,
+                                      color: Colors.white, size: 20),
                                 )
                               ],
                             ),
@@ -370,8 +352,7 @@ Future<dynamic> CustomDatePickerDialog(
                           Container(
                             padding: EdgeInsets.only(top: 5, bottom: 5),
                             color: grayLight2,
-                            width:
-                                MediaQuery.of(context).size.width * 0.83,
+                            width: MediaQuery.of(context).size.width * 0.83,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -392,11 +373,8 @@ Future<dynamic> CustomDatePickerDialog(
                                             bottom: 10,
                                             right: 5,
                                             left: 15),
-                                        child: SvgPicture.asset(
-                                          "assets/icons/arrow_left_1.svg",
-                                          width: 15,
-                                          height: 15,
-                                        ),
+                                        child: Icon(Icons.arrow_back_ios,
+                                            size: 15),
                                       ),
                                     ),
                                     Container(
@@ -424,11 +402,8 @@ Future<dynamic> CustomDatePickerDialog(
                                             bottom: 10,
                                             right: 15,
                                             left: 5),
-                                        child: SvgPicture.asset(
-                                          "assets/icons/ic_arrow_right.svg",
-                                          width: 15,
-                                          height: 15,
-                                        ),
+                                        child: Icon(Icons.arrow_forward_ios,
+                                            size: 15),
                                       ),
                                     )
                                   ],
@@ -449,12 +424,10 @@ Future<dynamic> CustomDatePickerDialog(
                                             bottom: 10,
                                             right: 5,
                                             left: 15),
-                                        child: SvgPicture.asset(
-                                          "assets/icons/arrow_left_1.svg",
-                                          width: 15,
-                                          height: 15,
-                                          color:
-                                              textDark,
+                                        child: Icon(
+                                          Icons.arrow_back_ios,
+                                          size: 15,
+                                          color: textDark,
                                         ),
                                       ),
                                     ),
@@ -483,12 +456,10 @@ Future<dynamic> CustomDatePickerDialog(
                                             bottom: 10,
                                             right: 15,
                                             left: 5),
-                                        child: SvgPicture.asset(
-                                          "assets/icons/ic_arrow_right.svg",
-                                          width: 15,
-                                          height: 15,
-                                          color:
-                                            textDark,
+                                        child: Icon(
+                                          Icons.arrow_forward_ios,
+                                          size: 15,
+                                          color: textDark,
                                         ),
                                       ),
                                     )
@@ -505,8 +476,7 @@ Future<dynamic> CustomDatePickerDialog(
                                     bottomLeft: Radius.circular(15))),
                             padding: EdgeInsets.only(
                                 left: 15, right: 15, bottom: 10),
-                            width:
-                                MediaQuery.of(context).size.width * 0.83,
+                            width: MediaQuery.of(context).size.width * 0.83,
                             child: ValueListenableBuilder(
                               valueListenable: selectedIndex,
                               builder: (context, value, child) =>
@@ -568,12 +538,10 @@ Future<dynamic> CustomDatePickerDialog(
                                 onPressed: () {},
                                 backgroundColor: Colors.white,
                                 outlineColor: purple,
-                                child: Text(
-                                    "cancel",
+                                child: Text("cancel",
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: purple,
-                                        fontSize: 15),
+                                    style:
+                                        TextStyle(color: purple, fontSize: 15),
                                     textDirection: TextDirection.ltr)),
                             FullwdithButton(
                                 width: MediaQuery.of(context).size.width * .4,
@@ -587,8 +555,7 @@ Future<dynamic> CustomDatePickerDialog(
                                 child: Text("ok",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 15),
+                                        color: Colors.white, fontSize: 15),
                                     textDirection: TextDirection.ltr))
                           ],
                         ),

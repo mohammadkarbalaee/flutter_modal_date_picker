@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
-      CustomDatePickerDialog(context, DateTime.now());
+      showModalDatePicker(context, DateTime.now());
     });
 
     return Scaffold(
