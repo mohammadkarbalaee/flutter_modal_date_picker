@@ -11,29 +11,53 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A fancy and highly customizable date picker for Flutter.
+
+<p align="center">
+    <img src="document/v0.1.0.gif" height="500"/>
+</p>
 
 ## Features
 
-ist what your package can do. Maybe include images, gifs, or videos.
+Supports manual input with format checking and picking a date from the provided calendar.
+
+***flutter_modal_date_picker is still on the development phase and customization features are yet to be added to this package.***
 
 ## Getting started
 
-List prerequisites and provide or point to information on how to
-start using the package.
+Supports all platforms.
 
 ## Usage
 
-Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Just call the <code>showModalDatePicker</code> function and 
+wait for it to return an string.
 
 ```dart
-const like = 'sample';
+class MyApp extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          body: ElevatedButton(
+                child: Text(
+                    'show date picker',
+                    style: TextStyle(fontSize: 30),
+                ),
+                onPressed: () async {
+                    String chosenDate =
+                        await showModalDatePicker(context, DateTime.now());
+                    print(chosenDate);
+                },
+            ), 
+        ),
+    );
+  }
+}
+
 ```
 
 ## Additional information
 
-Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+For more info on this package, head onto our github repository. Feel free to open issues and request additional features.
