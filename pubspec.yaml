@@ -1,6 +1,6 @@
 name: flutter_modal_date_picker
 description: A fancy and highly customizable date picker for Flutter
-version: 0.0.2
+version: 0.1.0
 homepage: https://github.com/muhammadkarbalaee/flutter_modal_date_picker
 
 environment:

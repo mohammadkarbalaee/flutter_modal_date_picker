@@ -14,7 +14,7 @@ and the Flutter guide for
 A fancy and highly customizable date picker for Flutter.
 
 <p align="center">
-    <img src="document/v0.1.0.gif" height="500"/>
+    <img src="https://raw.githubusercontent.com/muhammadkarbalaee/flutter_modal_date_picker/master/document/v0.1.0.gif" height="500"/>
 </p>
 
 ## Features
