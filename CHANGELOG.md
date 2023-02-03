@@ -9,3 +9,8 @@
 ## 0.1.0
 
 * the first useable and reliable version with no bugs
+
+## 0.1.1
+
+* document issue fixes
+
